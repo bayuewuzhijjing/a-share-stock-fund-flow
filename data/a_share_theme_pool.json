@@ -1,0 +1,334 @@
+{
+  "updatedAt": "2026-08-21",
+  "version": "tech-theme-pool-v3",
+  "note": "SignalDesk 个股资金流速科技题材池。按主线与产业链环节维护，避免把锂电池等非科技题材混入科技雷达；每个板块保留完整成分股及快照状态。",
+  "themes": [
+    {
+      "theme": "PCB",
+      "alias": ["AI PCB", "PCB", "高速板", "高多层板", "HDI", "覆铜板", "铜箔", "封装基板"],
+      "branches": [
+        {
+          "branch": "下游AI服务器PCB",
+          "role": "核心制造",
+          "stocks": [
+            {"code": "300476", "name": "胜宏科技", "sector": "AI PCB / 高多层板", "priority": "high"},
+            {"code": "002463", "name": "沪电股份", "sector": "AI PCB / 高速通信板", "priority": "high"},
+            {"code": "002916", "name": "深南电路", "sector": "AI PCB / 通信板与封装基板", "priority": "high"},
+            {"code": "603228", "name": "景旺电子", "sector": "AI PCB / HDI与汽车板", "priority": "high"},
+            {"code": "002384", "name": "东山精密", "sector": "AI PCB / 通信与消费电子板", "priority": "high"},
+            {"code": "002436", "name": "兴森科技", "sector": "AI PCB / 封装基板", "priority": "medium"},
+            {"code": "688183", "name": "生益电子", "sector": "AI PCB / 高速通信板", "priority": "medium"},
+            {"code": "001389", "name": "广合科技", "sector": "AI PCB / 服务器PCB", "priority": "medium"},
+            {"code": "605258", "name": "协和电子", "sector": "AI PCB / 印制电路板", "priority": "medium"}
+          ]
+        },
+        {
+          "branch": "上游覆铜板CCL",
+          "role": "上游材料",
+          "stocks": [
+            {"code": "600183", "name": "生益科技", "sector": "PCB上游 / 覆铜板CCL", "priority": "high"},
+            {"code": "603186", "name": "华正新材", "sector": "PCB上游 / 覆铜板CCL", "priority": "medium"},
+            {"code": "688519", "name": "南亚新材", "sector": "PCB上游 / 覆铜板CCL", "priority": "medium"}
+          ]
+        },
+        {
+          "branch": "上游铜箔",
+          "role": "上游材料",
+          "stocks": [
+            {"code": "301217", "name": "铜冠铜箔", "sector": "PCB上游 / 铜箔", "priority": "medium"},
+            {"code": "600110", "name": "诺德股份", "sector": "PCB上游 / 铜箔", "priority": "medium"}
+          ]
+        },
+        {
+          "branch": "高频材料与填料",
+          "role": "上游材料",
+          "stocks": [
+            {"code": "688300", "name": "联瑞新材", "sector": "PCB上游 / 高频填料", "priority": "medium"},
+            {"code": "300395", "name": "菲利华", "sector": "PCB上游 / 石英材料", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "CPO",
+      "alias": ["CPO", "光模块", "光通信", "硅光", "高速光模块"],
+      "branches": [
+        {
+          "branch": "800G/1.6T光模块",
+          "role": "核心制造",
+          "stocks": [
+            {"code": "300308", "name": "中际旭创", "sector": "CPO / 光模块", "priority": "high"},
+            {"code": "300502", "name": "新易盛", "sector": "CPO / 光模块", "priority": "high"}
+          ]
+        },
+        {
+          "branch": "光器件与连接",
+          "role": "上游器件",
+          "stocks": [
+            {"code": "002281", "name": "光迅科技", "sector": "CPO / 光器件", "priority": "high"},
+            {"code": "300394", "name": "天孚通信", "sector": "CPO / 无源光器件", "priority": "high"},
+            {"code": "300570", "name": "太辰光", "sector": "CPO / 连接器与光器件", "priority": "medium"},
+            {"code": "300620", "name": "光库科技", "sector": "CPO / 薄膜铌酸锂与器件", "priority": "medium"},
+            {"code": "301205", "name": "联特科技", "sector": "CPO / 光模块", "priority": "medium"},
+            {"code": "688313", "name": "仕佳光子", "sector": "CPO / 光器件", "priority": "medium"},
+            {"code": "688498", "name": "源杰科技", "sector": "CPO / 激光器芯片", "priority": "medium"},
+            {"code": "000988", "name": "华工科技", "sector": "CPO / 光模块与激光器", "priority": "medium"},
+            {"code": "688800", "name": "瑞可达", "sector": "CPO / 高速连接器", "priority": "medium"},
+            {"code": "300489", "name": "光智科技", "sector": "CPO / 光电材料与器件", "priority": "medium"},
+            {"code": "002491", "name": "通鼎互联", "sector": "CPO / 光通信与线缆", "priority": "medium"}
+          ]
+        },
+        {
+          "branch": "光模块配套与精密制造",
+          "role": "配套制造",
+          "stocks": [
+            {"code": "002384", "name": "东山精密", "sector": "CPO / 光模块配套与精密制造", "priority": "high"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "存储",
+      "alias": ["存储", "DRAM", "NAND", "HBM", "DDR5", "存储芯片", "存储模组"],
+      "branches": [
+        {
+          "branch": "存储芯片设计",
+          "role": "芯片设计",
+          "stocks": [
+            {"code": "688825", "name": "长鑫科技", "sector": "存储 / DRAM制造", "priority": "high"},
+            {"code": "603986", "name": "兆易创新", "sector": "存储 / 芯片设计", "priority": "high"},
+            {"code": "688008", "name": "澜起科技", "sector": "存储 / DDR5接口芯片", "priority": "high"}
+          ]
+        },
+        {
+          "branch": "存储模组与库存重估",
+          "role": "模组品牌",
+          "stocks": [
+            {"code": "301308", "name": "江波龙", "sector": "存储 / 模组", "priority": "high"},
+            {"code": "688525", "name": "佰维存储", "sector": "存储 / 模组", "priority": "high"},
+            {"code": "001309", "name": "德明利", "sector": "存储 / 模组", "priority": "medium"},
+            {"code": "300475", "name": "香农芯创", "sector": "存储 / 分销与模组", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "服务器液冷",
+      "alias": ["服务器", "液冷", "数据中心", "AI服务器", "算力租赁"],
+      "branches": [
+        {
+          "branch": "AI服务器整机",
+          "role": "整机与代工",
+          "stocks": [
+            {"code": "603019", "name": "中科曙光", "sector": "服务器 / 国产算力", "priority": "high"},
+            {"code": "000977", "name": "浪潮信息", "sector": "服务器 / AI服务器", "priority": "high"},
+            {"code": "601138", "name": "工业富联", "sector": "服务器 / AI服务器代工", "priority": "high"}
+          ]
+        },
+        {
+          "branch": "液冷与温控",
+          "role": "基础设施",
+          "stocks": [
+            {"code": "300442", "name": "润泽科技", "sector": "液冷 / 数据中心", "priority": "medium"},
+            {"code": "300499", "name": "高澜股份", "sector": "液冷 / 温控", "priority": "medium"},
+            {"code": "301018", "name": "申菱环境", "sector": "液冷 / 数据中心温控", "priority": "medium"},
+            {"code": "002837", "name": "英维克", "sector": "液冷 / 数据中心温控", "priority": "medium"},
+            {"code": "300990", "name": "同飞股份", "sector": "液冷 / 工业温控", "priority": "medium"},
+            {"code": "002335", "name": "科华数据", "sector": "液冷 / 数据中心电源与温控", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "国产半导体",
+      "alias": ["国产芯片", "半导体", "CPU", "GPU", "AI芯片", "算力芯片"],
+      "branches": [
+        {
+          "branch": "AI芯片与CPU/GPU",
+          "role": "芯片设计",
+          "stocks": [
+            {"code": "688256", "name": "寒武纪", "sector": "国产半导体 / AI芯片", "priority": "high"},
+            {"code": "688041", "name": "海光信息", "sector": "国产半导体 / CPU/GPU", "priority": "high"},
+            {"code": "688347", "name": "华虹公司", "sector": "国产半导体 / 晶圆制造", "priority": "medium"},
+            {"code": "688981", "name": "中芯国际", "sector": "国产半导体 / 晶圆制造", "priority": "high"},
+            {"code": "688047", "name": "龙芯中科", "sector": "国产半导体 / CPU", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "封测",
+      "alias": ["封测", "先进封装", "Chiplet", "HBM封装"],
+      "branches": [
+        {
+          "branch": "先进封装与测试",
+          "role": "封测",
+          "stocks": [
+            {"code": "002156", "name": "通富微电", "sector": "封测 / 先进封装", "priority": "high"},
+            {"code": "600584", "name": "长电科技", "sector": "封测 / 先进封装", "priority": "high"},
+            {"code": "603005", "name": "晶方科技", "sector": "封测 / CIS封装", "priority": "medium"},
+            {"code": "002185", "name": "华天科技", "sector": "封测 / 集成电路封装", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "半导体设备",
+      "alias": ["半导体设备", "测试设备", "刻蚀", "薄膜", "CMP", "检测设备"],
+      "branches": [
+        {
+          "branch": "测试设备",
+          "role": "设备",
+          "stocks": [
+            {"code": "300604", "name": "长川科技", "sector": "半导体设备 / 测试设备", "priority": "high"},
+            {"code": "300567", "name": "精测电子", "sector": "半导体设备 / 检测", "priority": "medium"}
+          ]
+        },
+        {
+          "branch": "前道设备",
+          "role": "设备",
+          "stocks": [
+            {"code": "002371", "name": "北方华创", "sector": "半导体设备 / 刻蚀薄膜", "priority": "high"},
+            {"code": "688012", "name": "中微公司", "sector": "半导体设备 / 刻蚀", "priority": "high"},
+            {"code": "688072", "name": "拓荆科技", "sector": "半导体设备 / 薄膜沉积", "priority": "medium"},
+            {"code": "688120", "name": "华海清科", "sector": "半导体设备 / CMP", "priority": "medium"},
+            {"code": "688082", "name": "盛美上海", "sector": "半导体设备 / 清洗设备", "priority": "medium"},
+            {"code": "688037", "name": "芯源微", "sector": "半导体设备 / 涂胶显影", "priority": "medium"},
+            {"code": "688200", "name": "华峰测控", "sector": "半导体设备 / 测试设备", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "AI应用",
+      "alias": ["AI应用", "大模型", "智能体", "AI工具", "AI短剧", "AI内容"],
+      "branches": [
+        {
+          "branch": "AI工具与内容",
+          "role": "应用平台",
+          "stocks": [
+            {"code": "300418", "name": "昆仑万维", "sector": "AI应用 / 海外订阅", "priority": "high"},
+            {"code": "002230", "name": "科大讯飞", "sector": "AI应用 / 大模型", "priority": "medium"},
+            {"code": "688111", "name": "金山办公", "sector": "AI应用 / AI办公", "priority": "high"},
+            {"code": "300624", "name": "万兴科技", "sector": "AI应用 / AI工具", "priority": "medium"},
+            {"code": "300364", "name": "中文在线", "sector": "AI应用 / 内容生成", "priority": "medium"},
+            {"code": "300229", "name": "拓尔思", "sector": "AI应用 / 数据与大模型", "priority": "medium"},
+            {"code": "601360", "name": "三六零", "sector": "AI应用 / 安全与智能体", "priority": "medium"},
+            {"code": "300459", "name": "汤姆猫", "sector": "AI应用 / 陪伴智能体", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "机器人",
+      "alias": ["机器人", "人形机器人", "执行器", "减速器", "丝杠"],
+      "branches": [
+        {
+          "branch": "执行器与核心零部件",
+          "role": "核心零部件",
+          "stocks": [
+            {"code": "002050", "name": "三花智控", "sector": "机器人 / 执行器", "priority": "high"},
+            {"code": "002920", "name": "德赛西威", "sector": "机器人 / 智能驱动", "priority": "medium"},
+            {"code": "603667", "name": "五洲新春", "sector": "机器人 / 丝杠轴承", "priority": "medium"},
+            {"code": "002896", "name": "中大力德", "sector": "机器人 / 减速器", "priority": "medium"},
+            {"code": "601689", "name": "拓普集团", "sector": "机器人 / 执行器与结构件", "priority": "medium"},
+            {"code": "688017", "name": "绿的谐波", "sector": "机器人 / 谐波减速器", "priority": "medium"},
+            {"code": "002472", "name": "双环传动", "sector": "机器人 / 精密齿轮", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "游戏",
+      "alias": ["游戏", "AI游戏", "出海游戏"],
+      "branches": [
+        {
+          "branch": "游戏出海与AI内容",
+          "role": "应用平台",
+          "stocks": [
+            {"code": "300002", "name": "神州泰岳", "sector": "游戏 / 出海", "priority": "medium"},
+            {"code": "002555", "name": "三七互娱", "sector": "游戏 / 内容", "priority": "medium"},
+            {"code": "002624", "name": "完美世界", "sector": "游戏 / 内容", "priority": "medium"},
+            {"code": "002517", "name": "恺英网络", "sector": "游戏 / 出海", "priority": "medium"},
+            {"code": "002602", "name": "世纪华通", "sector": "游戏 / 出海", "priority": "medium"},
+            {"code": "002558", "name": "巨人网络", "sector": "游戏 / 内容", "priority": "medium"},
+            {"code": "603444", "name": "吉比特", "sector": "游戏 / 出海", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "AI服务器",
+      "alias": ["AI服务器", "服务器", "算力集群", "服务器整机", "国产服务器"],
+      "branches": [
+        {
+          "branch": "服务器整机与代工",
+          "role": "系统集成",
+          "stocks": [
+            {"code": "000977", "name": "浪潮信息", "sector": "AI服务器 / 整机与集群", "priority": "high"},
+            {"code": "603019", "name": "中科曙光", "sector": "AI服务器 / 国产算力", "priority": "high"},
+            {"code": "601138", "name": "工业富联", "sector": "AI服务器 / ODM代工", "priority": "high"},
+            {"code": "000938", "name": "紫光股份", "sector": "AI服务器 / 网络设备", "priority": "medium"},
+            {"code": "000063", "name": "中兴通讯", "sector": "AI服务器 / 算力基础设施", "priority": "high"},
+            {"code": "000066", "name": "中国长城", "sector": "AI服务器 / 国产计算机", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "算力租赁",
+      "alias": ["算力租赁", "智算中心", "算力服务", "GPU租赁", "超算云"],
+      "branches": [
+        {
+          "branch": "智算中心与算力运营",
+          "role": "算力服务",
+          "stocks": [
+            {"code": "300442", "name": "润泽科技", "sector": "算力租赁 / 智算中心", "priority": "high"},
+            {"code": "300383", "name": "光环新网", "sector": "算力租赁 / 数据中心", "priority": "high"},
+            {"code": "300738", "name": "奥飞数据", "sector": "算力租赁 / 数据中心", "priority": "medium"},
+            {"code": "603881", "name": "数据港", "sector": "算力租赁 / 数据中心", "priority": "medium"},
+            {"code": "603220", "name": "中贝通信", "sector": "算力租赁 / 智算服务", "priority": "high"},
+            {"code": "688158", "name": "优刻得", "sector": "算力租赁 / 云计算", "priority": "medium"},
+            {"code": "600602", "name": "云赛智联", "sector": "算力租赁 / 云服务", "priority": "medium"},
+            {"code": "000815", "name": "美利云", "sector": "算力租赁 / 数据中心", "priority": "medium"},
+            {"code": "002335", "name": "科华数据", "sector": "算力租赁 / 数据中心电源", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "高速连接",
+      "alias": ["高速连接", "高速线缆", "连接器", "铜缆", "DAC", "AEC"],
+      "branches": [
+        {
+          "branch": "高速线缆与连接器",
+          "role": "连接组件",
+          "stocks": [
+            {"code": "002475", "name": "立讯精密", "sector": "高速连接 / 连接器", "priority": "high"},
+            {"code": "300913", "name": "兆龙互连", "sector": "高速连接 / 高速线缆", "priority": "high"},
+            {"code": "002130", "name": "沃尔核材", "sector": "高速连接 / 铜缆与材料", "priority": "high"},
+            {"code": "688668", "name": "鼎通科技", "sector": "高速连接 / 高速连接器", "priority": "medium"},
+            {"code": "300570", "name": "太辰光", "sector": "高速连接 / 光电连接", "priority": "medium"}
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "半导体材料",
+      "alias": ["半导体材料", "电子化学品", "抛光液", "靶材", "光刻胶", "前驱体"],
+      "branches": [
+        {
+          "branch": "关键材料与电子化学品",
+          "role": "上游材料",
+          "stocks": [
+            {"code": "300054", "name": "鼎龙股份", "sector": "半导体材料 / CMP材料", "priority": "high"},
+            {"code": "002409", "name": "雅克科技", "sector": "半导体材料 / 前驱体", "priority": "high"},
+            {"code": "300666", "name": "江丰电子", "sector": "半导体材料 / 靶材", "priority": "high"},
+            {"code": "688019", "name": "安集科技", "sector": "半导体材料 / 抛光液", "priority": "medium"}
+          ]
+        }
+      ]
+    }
+  ]
+}
+
