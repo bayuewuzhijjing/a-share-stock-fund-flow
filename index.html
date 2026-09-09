@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>个股资金流速</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./stock-flow.css" />
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      if (!params.has("workspace")) {
+        params.set("workspace", "stock-flow");
+        window.history.replaceState({}, "", `${window.location.pathname}?${params}`);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="app-shell signaldesk-dashboard signaldesk-v2 stock-flow-standalone" data-mobile-view="stock-flow" data-workspace-view="stock-flow">
+      <main class="main-area">
+        <header class="topbar top-command-bar stock-flow-standalone-topbar">
+          <div class="command-title">
+            <p class="eyebrow">OPEN SOURCE MARKET TOOL</p>
+            <h2>个股资金流速</h2>
+            <p class="topbar-copy">盘中真实增量 · 多交易日累计排行 · 本地优先运行</p>
+          </div>
+          <span class="standalone-badge">本地开源版</span>
+        </header>
+
+        <section class="stock-flow-workspace" id="stock-flow-workspace" aria-labelledby="stock-flow-title">
+          <header class="stock-flow-header">
+            <div class="stock-flow-heading">
+              <span class="stock-flow-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div>
+                <p>STOCK CAPITAL VELOCITY</p>
+                <h2 id="stock-flow-title">个股资金流速</h2>
+                <span>盘中真实增量 · 多交易日累计排行</span>
+              </div>
+            </div>
+            <div class="stock-flow-kpis" aria-label="个股资金监控概览">
+              <article><span>候选覆盖</span><strong id="stock-flow-coverage">--</strong><small id="stock-flow-coverage-detail">等待采样</small></article>
+              <article><span>流入最快</span><strong class="is-positive" id="stock-flow-fastest-in">--</strong><small id="stock-flow-fastest-in-value">--</small></article>
+              <article><span>流出最快</span><strong class="is-negative" id="stock-flow-fastest-out">--</strong><small id="stock-flow-fastest-out-value">--</small></article>
+              <article><span>历史完整</span><strong id="stock-flow-history-ready">--</strong><small id="stock-flow-history-ready-period">21个交易日同源口径</small></article>
+            </div>
+            <div class="stock-flow-actions">
+              <label><span>交易日</span><select id="stock-flow-date" aria-label="选择个股资金交易日"></select></label>
+              <button class="stock-flow-button secondary" id="stock-flow-history-refresh" type="button">同步多日</button>
+              <button class="stock-flow-button" id="stock-flow-refresh" type="button">立即采样</button>
+            </div>
+          </header>
+
+          <section class="stock-flow-controls" aria-label="个股资金筛选与排序">
+            <div class="stock-flow-scope-tabs" id="stock-flow-scope-tabs" role="group" aria-label="监控范围">
+              <button class="active" type="button" data-stock-flow-scope="shortlist">今日综合强度前10</button>
+              <button type="button" data-stock-flow-scope="watchlist">核心自选</button>
+              <button type="button" data-stock-flow-scope="dynamic">全市场异动</button>
+              <button type="button" data-stock-flow-scope="all">全部候选</button>
+            </div>
+            <div class="stock-flow-period-tabs" id="stock-flow-period-tabs" role="group" aria-label="资金观察周期">
+              <button class="active" type="button" data-stock-flow-period="1">1分</button><button type="button" data-stock-flow-period="5">5分</button><button type="button" data-stock-flow-period="15">15分</button><button type="button" data-stock-flow-period="30">30分</button><button type="button" data-stock-flow-period="60">60分</button><button type="button" data-stock-flow-period="120">120分</button><button type="button" data-stock-flow-period="day">当日</button><span aria-hidden="true"></span><button type="button" data-stock-flow-period="3d">3日</button><button type="button" data-stock-flow-period="7d">7日</button><button type="button" data-stock-flow-period="14d">14日</button><button type="button" data-stock-flow-period="21d">21日</button>
+            </div>
+            <div class="stock-flow-sort-tabs" id="stock-flow-sort-tabs" role="group" aria-label="排序指标">
+              <button class="active" type="button" data-stock-flow-sort="velocity">流速</button><button type="button" data-stock-flow-sort="inflow">净流入</button><button type="button" data-stock-flow-sort="acceleration">加速度</button><button type="button" data-stock-flow-sort="intensity">强度</button>
+            </div>
+            <form class="stock-flow-manual-add" id="stock-flow-manual-add" aria-label="手动加入盯盘股票">
+              <input id="stock-flow-manual-code" type="text" inputmode="numeric" maxlength="6" placeholder="手动加代码" autocomplete="off" /><input id="stock-flow-manual-sector" type="text" placeholder="题材" autocomplete="off" /><button type="submit">加入</button>
+            </form>
+            <label class="stock-flow-search"><span>搜索</span><input id="stock-flow-search" type="search" placeholder="代码 / 名称 / 产业" autocomplete="off" /></label>
+          </section>
+
+          <section class="stock-flow-replay" aria-label="盘中快照回放">
+            <div><strong id="stock-flow-selected-time">--:--</strong><span id="stock-flow-period-caption">最近1个交易分钟</span></div>
+            <input id="stock-flow-timeline" type="range" min="0" max="0" value="0" step="1" aria-label="选择盘中个股资金快照" />
+            <button class="stock-flow-latest" id="stock-flow-latest" type="button" title="跳到最新快照" aria-label="跳到最新快照">↻</button>
+          </section>
+
+          <section class="stock-flow-theme-board" aria-labelledby="stock-flow-theme-title">
+            <header class="stock-flow-theme-head"><div><span>TECH THEME RADAR</span><h3 id="stock-flow-theme-title">科技题材强度</h3></div><small id="stock-flow-theme-meta">按板块资金、30分钟流速和涨幅聚合</small></header>
+            <nav class="stock-flow-theme-nav" id="stock-flow-theme-nav" aria-label="科技题材筛选"></nav>
+            <div class="stock-flow-branch-nav" id="stock-flow-branch-nav" aria-label="产业链分支筛选"></div>
+            <div class="stock-flow-theme-list" id="stock-flow-theme-list" aria-live="polite"></div>
+          </section>
+
+          <section class="stock-flow-shortlist" aria-labelledby="stock-flow-shortlist-title">
+            <header class="stock-flow-shortlist-head"><div><span>TRADE CANDIDATES</span><h3 id="stock-flow-shortlist-title">今日综合强度前10</h3><p id="stock-flow-shortlist-note">等待首个有效快照和当日累计资金形成，不强行填满。</p></div><div class="stock-flow-shortlist-count"><strong id="stock-flow-shortlist-count">0只</strong><small id="stock-flow-shortlist-meta">核心0只 · 观察0只</small></div></header>
+            <div class="stock-flow-shortlist-list" id="stock-flow-shortlist-list" aria-live="polite"></div>
+          </section>
+
+          <div class="stock-flow-main-grid">
+            <section class="stock-flow-table-panel" aria-labelledby="stock-flow-rank-title">
+              <header class="stock-flow-panel-head"><div><span>CAPITAL RANKING</span><h3 id="stock-flow-rank-title">分钟资金流速排行榜</h3></div><div><strong id="stock-flow-row-count">0只</strong><small id="stock-flow-rank-note">按每分钟主力净额增量排序</small></div></header>
+              <div class="stock-flow-table-scroll"><table class="stock-flow-table"><thead><tr><th>排名</th><th>股票 / 产业</th><th>现价 / 涨跌</th><th id="stock-flow-col-net">窗口净流入</th><th id="stock-flow-col-speed">每分钟流速</th><th id="stock-flow-col-trend">加速度</th><th id="stock-flow-col-strength">资金强度</th><th id="stock-flow-col-secondary">超大单</th><th>价格确认</th><th>信号</th></tr></thead><tbody id="stock-flow-table-body"></tbody></table></div>
+            </section>
+            <aside class="stock-flow-detail" aria-labelledby="stock-flow-detail-title">
+              <header class="stock-flow-detail-head"><div><span>STOCK TAPE</span><h3 id="stock-flow-detail-title">选择一只股票</h3><small id="stock-flow-detail-meta">查看价格与资金是否同向</small></div><strong id="stock-flow-detail-signal">--</strong></header>
+              <div class="stock-flow-detail-stats" id="stock-flow-detail-stats"></div>
+              <div class="stock-flow-chart" id="stock-flow-chart" aria-label="所选个股盘中价格与主力资金轨迹"></div>
+              <section class="stock-flow-daily-panel"><header><strong>近21日净额与成交额</strong><span id="stock-flow-daily-caption">等待历史补录</span></header><div class="stock-flow-daily-bars" id="stock-flow-daily-bars"></div></section>
+            </aside>
+          </div>
+
+          <section class="stock-flow-validation" aria-labelledby="stock-flow-validation-title">
+            <header class="stock-flow-validation-head"><div><span>FORWARD VALIDATION</span><h3 id="stock-flow-validation-title">候选后验验证</h3><p id="stock-flow-validation-note">等待候选冻结与后续真实快照，验证结果不会用模拟数据填充。</p></div><div class="stock-flow-validation-meta"><strong id="stock-flow-validation-count">0个候选</strong><small id="stock-flow-validation-meta-text">当前批次 0 个已完成 · 历史去重 0 个</small></div><nav class="stock-flow-validation-horizons" id="stock-flow-validation-horizons" aria-label="候选验证窗口"><button class="active" type="button" data-stock-flow-validation-horizon="5m">5分钟</button><button type="button" data-stock-flow-validation-horizon="15m">15分钟</button><button type="button" data-stock-flow-validation-horizon="30m">30分钟</button><button type="button" data-stock-flow-validation-horizon="60m">60分钟</button><button type="button" data-stock-flow-validation-horizon="1d">收盘</button></nav></header>
+            <div class="stock-flow-validation-summary" id="stock-flow-validation-summary" aria-label="候选验证摘要"></div>
+            <div class="stock-flow-validation-table-wrap"><table class="stock-flow-validation-table"><thead><tr><th>股票 / 产业</th><th>候选层级</th><th>验证收益</th><th>路径峰值 / 低点</th><th>观察时点</th><th>状态</th></tr></thead><tbody id="stock-flow-validation-table-body"></tbody></table></div>
+          </section>
+
+          <footer class="stock-flow-footer"><span>数据源 <strong id="stock-flow-provider">东方财富资金流向（分钟快照 + 日线）</strong></span><span>行情时点 <strong id="stock-flow-updated">--</strong></span><p id="stock-flow-methodology">分钟增量使用真实快照相减；多日累计按交易日计算。</p></footer>
+        </section>
+      </main>
+    </div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

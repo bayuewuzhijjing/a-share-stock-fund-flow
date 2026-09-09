@@ -1,0 +1,27 @@
+/* Standalone shell overrides. The stock-flow component styles live in styles.css. */
+:root { color-scheme: light; }
+body { background: #edf3f7; }
+.stock-flow-standalone { display: block; min-height: 100vh; }
+.stock-flow-standalone .main-area { width: min(1800px, 100%); box-sizing: border-box; margin: 0 auto; padding: 18px; }
+.stock-flow-standalone-topbar { margin-bottom: 12px; padding: 0 4px; }
+.stock-flow-standalone-topbar .command-title { min-width: 0; }
+.stock-flow-standalone-topbar .topbar-copy { margin-bottom: 0; }
+.standalone-badge { flex: 0 0 auto; align-self: center; padding: 6px 9px; border: 1px solid #cbd8e6; border-radius: 5px; color: #315577; background: #fff; font-size: 11px; font-weight: 800; }
+.stock-flow-standalone .stock-flow-workspace { display: flex !important; flex-direction: column !important; gap: 8px !important; min-width: 0; }
+.stock-flow-standalone .stock-flow-header,
+.stock-flow-standalone .stock-flow-controls,
+.stock-flow-standalone .stock-flow-replay,
+.stock-flow-standalone .stock-flow-theme-board,
+.stock-flow-standalone .stock-flow-shortlist,
+.stock-flow-standalone .stock-flow-main-grid,
+.stock-flow-standalone .stock-flow-validation,
+.stock-flow-standalone .stock-flow-footer { flex: 0 0 auto !important; }
+.stock-flow-standalone .stock-flow-main-grid { min-height: 720px !important; }
+.stock-flow-standalone .stock-flow-validation { order: 7; }
+.stock-flow-standalone .stock-flow-footer { order: 8; }
+@media (max-width: 720px) {
+  .stock-flow-standalone .main-area { padding: 8px; }
+  .stock-flow-standalone-topbar { align-items: center; }
+  .stock-flow-standalone-topbar .topbar-copy { display: none; }
+  .stock-flow-standalone .stock-flow-main-grid { min-height: 0 !important; }
+}

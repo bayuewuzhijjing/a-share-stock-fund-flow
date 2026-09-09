@@ -1,0 +1,10 @@
+data/*.db
+data/*.db-*
+data/*.sqlite
+data/*.sqlite3
+__pycache__/
+*.py[cod]
+.artifacts/
+.venv/
+venv/
+.env
