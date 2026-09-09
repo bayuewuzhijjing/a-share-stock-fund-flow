@@ -114,7 +114,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_json(result)
                 return
             if parsed.path == "/api/stock-fund-flow/manual":
-                payload = add_manual_stock(body, path=DB_PATH)
+                payload = add_manual_stock(body)
                 self.send_json(with_freshness(payload))
                 return
             self.send_json({"error": "not found"}, 404)
@@ -143,3 +143,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("STOCK_FLOW_PORT", "4176"))
     print(f"Stock Flow open-source page: http://127.0.0.1:{port}/")
     ThreadingHTTPServer(("127.0.0.1", port), Handler).serve_forever()
+
